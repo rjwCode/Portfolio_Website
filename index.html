@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Data Analysis Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">Ryan Welbaum</h1>
+							<p>Data Analyst</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/ryan-welbaum-8b108a292" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/rjwCode" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Hi! I'm <strong>Ryan Welbaum</strong>, and this is my Data Analysis<br />
+								portfolio website.</h2>
+								<p>I'm passionate about utilizing data to create valuable insights that spark<br />
+								progress and innovation.</p>
+							</header>
+
+							<footer>
+								<a href="#portfolio" class="button scrolly">View my Projects</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+
+							<article class="item">
+								<header>
+									<h2>Data Cleaning with SQL -- <a href="https://github.com/rjwCode/SQL_Data_Cleaning" class="">GitHub</a></h2>
+									<hr>
+								</header>
+								
+								<p>
+									In this project, I utilized an Excel dataset with information about various properties. In the image below, you can see
+									what the original uncleaned dataset looked like.<br>
+									<br><div class="project_image"><a href="images/original_dataset.png" target="_blank"><figure><img src="images/original_dataset.png" alt="original dataset before cleaning"><figcaption>Figure 1. Original Dataset</figcaption></figure></a></div>
+									<br>The initial step of my data cleaning process was to observe the data to find what adjustments needed to be made. Various qualities
+									of the data jumped out to me, such as the PropertyAddress field, which could be better analyzed if separated into multiple columns. Other observations included
+									the presence of various NULL values, the formatting for DATE fields, formatting for the SoldAsVacant field, and duplicate data. 
+									<br><br><hr>
+									Step 1: Modify DATE Formatting<hr>
+									<br>In this step, the SaleDate column was modified to be a DATE field, rather than a DATETIME.
+									The SQL Code for this step is displayed below in <i>figure 2</i>.
+									<br><div class="project_image"><a href="images\data_cleaning_sql_step_1.png" target="_blank"><figure><img src="images\data_cleaning_sql_step_1.png" alt="Modifying the SaleDate column to a DATE field"><figcaption>Figure 2. Setting SaleData as a DATE Field</figcaption></figure></a></div>
+									<br><br><hr>
+									Step 2: Populate NULL Values in PropertyAddress<hr>
+									<br>In addition to NULL values, I observed that this column contained consecutive rows for the same property.
+									Thus, to solve the presence of NULL values, I utilized the address value from the next row for the same property
+									to replace them. This can be observed in the SQL code shown in <i>figure 3</i>.
+									<br><div class="project_image"><a href="images\data_cleaning_sql_step_2.png" target="_blank"><figure><img src="images\data_cleaning_sql_step_2.png" alt="Replacing NULL PropertyAddress values"><figcaption>Figure 3. Replacing NULL PropertyAddress Values</figcaption></figure></a></div>
+									<br><br><hr>
+									Step 3: Splitting PropertyAddress Into Address and City
+									<hr>
+									<br>After handling NULL values for the PropertyAddress field, the data now should be modified further for ease
+									of analysis. In order to do this, PropertyAddress was split into two new columns, PropertySplitAddress and PropertyCity.
+									This process is demonstrated in <i>figure 4</i>.
+									<br><div class="project_image"><a href="images\data_cleaning_sql_step_3.png" target="_blank"><figure><img src="images\data_cleaning_sql_step_3.png" alt="Splitting PropertyAddress into PropertySplitAddress and PropertyCity"><figcaption>Figure 4. Splitting PropertyAddress into Address and City</figcaption></figure></a></div>
+									<br><br><hr>
+									Step 4: Splitting OwnerAddress into the Address, City, and State
+									<hr>
+									<br>The OwnerAddress column is also in need of some refactoring. In this case, the OwnerAddress column was split into three columns: OwnerSplitAddress, OwnerCity, and OwnerState.
+									The SQL code used for this is displayed in <i>figure 5</i>. 
+									<br><div class="project_image"><a href="images\data_cleaning_sql_step_4.png" target="_blank"><figure><img src="images\data_cleaning_sql_step_4.png" alt="Splitting OwnerAddress into OwnerSplitAddress, OwnerCity, and OwnerState"><figcaption>Figure 5. Splitting OwnerAddress into Address, City, and State</figcaption></figure></a></div>
+									<br><br><hr>
+									Step 5: Reformat SoldAsVacant Values
+									<hr>
+									<br>Moving on from splitting columns, I observed that the values for SoldAsVacant initially had four variants: 'Y', 'Yes', 'N', and 'No'. To make the values for this column more neatly organized, the values 'Y' and 'N' will be reformatted to 'Yes' and 'No'
+									respectively. This process is displayed in <i>figure 6</i>. 
+									<br><div class="project_image"><a href="images\data_cleaning_sql_step_5.png" target="_blank"><figure><img src="images\data_cleaning_sql_step_5.png" alt="Reformatting SoldAsVacant values to 'Yes' and 'No'"><figcaption>Figure 6. Reormatting SoldAsVacant Values</figcaption></figure></a></div>
+									<br><br><hr>
+									Step 6: Removing Duplicate Values
+									<hr>
+									<br>In this step, duplicate values in the dataset will be handled. The method chosen for this process was to utilize ROW_NUMBER() and partitions to find rows with duplicate values for specific fields. This process
+									is demonstrated in <i>figure 7</i>
+									<br><div class="project_image"><a href="images\data_cleaning_sql_step_6.png" target="_blank"><figure><img src="images\data_cleaning_sql_step_6.png" alt="Removing Duplicates"><figcaption>Figure 7. Removing Duplicate Values</figcaption></figure></a></div>
+									<br><br><hr>
+									Step 7: Whitespace Removal
+									<hr>
+									<br>After handling duplicate values, the next step taken was to handle possible whitespace in various fields. As shown in <i>figure 8</i>, the chosen method to handle whitespcae was TRIM().
+									<br><div class="project_image"><a href="images\data_cleaning_sql_step_7.png" target="_blank"><figure><img src="images\data_cleaning_sql_step_7.png" alt="Removing Whitespace"><figcaption>Figure 8. Removing Whitespace</figcaption></figure></a></div>
+
+								</p>
+							</article>
+							<article class="item">
+								<header>
+									<h2>Data Visualization with Power BI</h2>
+								</header>
+								<a href="#" class=""><img src="images/pic05.jpg" alt="" /></a>
+							</article>
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>About Me</h2>
+							</header>
+
+
+							<p>I'm a data analyst skilled in SQL, Excel, and Power BI. I have experience cleaning, transforming, analyzing, and
+								visualizing data from various sources. Using industry standard tools and methodologies I have created projects that
+								showcase my skillset and demonstrate my capabilities. Additionally, I have a background and Bachelors Degree in Cybersecurity,
+								 which provides a strong foundation with technology. Thank you for visiting!
+							</p>
+
+						</div>
+					</section>
+				
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
