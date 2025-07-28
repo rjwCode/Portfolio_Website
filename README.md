@@ -1,7 +1,7 @@
 # My Data Analysis Portfolio: https://rjwcode.github.io/Portfolio_Website/
 This website showcases my data analysis projects. These projects demonstrate my capabilities in data cleaning, transformation, visualization, and analysis.
 
-The tools utlizied in these projects include: SQL, SQL Server, SQL Server Management Studio, Power BI Desktop and Service, and Excel. 
+The tools utilized in these projects include: SQL, SQL Server, SQL Server Management Studio, Power BI Desktop and Service, and Excel. 
 
 Thank you for visiting!
 
